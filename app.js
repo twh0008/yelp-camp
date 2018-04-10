@@ -20,8 +20,8 @@ var commentRoutes       = require("./routes/comments"),
     campgroundRoutes    = require("./routes/campgrounds"),
     indexRoutes         = require("./routes/index");
 
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://hearts:password@ds241059.mlab.com:41059/yelp_camp");
+//mongoose.connect(process.env.LOCAL_DB_URL);
+mongoose.connect(process.env.MLAB_DB_URL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname +"/public"));
