@@ -20,7 +20,9 @@ var commentRoutes       = require("./routes/comments"),
     campgroundRoutes    = require("./routes/campgrounds"),
     indexRoutes         = require("./routes/index");
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://hearts:password@ds241059.mlab.com:41059/yelp_camp");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname +"/public"));
 app.set("view engine", "ejs");
@@ -29,7 +31,7 @@ app.use(flash());
 
 app.locals.moment = require('moment');
 
-seedDB();
+// seedDB();
 
 
 
