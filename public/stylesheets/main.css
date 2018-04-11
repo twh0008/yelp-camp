@@ -1,3 +1,20 @@
+ body {
+ background: #BBD2C5;  /* fallback for old browsers */  /* Chrome 10-25, Safari 5.1-6 */
+ background: -webkit-linear-gradient(left, #536976, #BBD2C5);
+ background: -moz-linear-gradient(left, #536976, #BBD2C5);
+ background: -o-linear-gradient(left, #536976, #BBD2C5);
+ background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+ 
+ .img-thumbnail {
+  height: 200px;
+ }
+ .figure {
+  background: #e9ecef;
+ }
+ .page-item {
+  background: #e9ecef;
+ }
  .container {
   margin-top: 50px;
  }
@@ -51,6 +68,12 @@
  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
  animation-delay: 40s;
 }
+
+#campgrounds-row {
+ display: flex;
+ flex-wrap: wrap;
+}
+
 
 #landing-header {
  z-index: 1;
