@@ -6,11 +6,7 @@
  background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
  
- .img-thumbnail {
-    height: 200px;
-    min-height: 200px;
-    min-width: 255px;
-}
+
  .figure {
   background: #e9ecef;
  }
@@ -20,7 +16,7 @@
  .container {
   margin-top: 50px;
  }
-  .bg-light.card {
+ .bg-light.card {
     margin-top: 20px;
 }
 .delete-form {
@@ -70,6 +66,7 @@
  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
  animation-delay: 40s;
 }
+
 
 #campgrounds-row {
  display: flex;
