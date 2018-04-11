@@ -20,8 +20,8 @@ var commentRoutes       = require("./routes/comments"),
     campgroundRoutes    = require("./routes/campgrounds"),
     indexRoutes         = require("./routes/index");
 
-//mongoose.connect(process.env.LOCAL_DB_URL);
-mongoose.connect(process.env.MLAB_DB_URL);
+mongoose.connect(process.env.DB_URL);
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname +"/public"));
