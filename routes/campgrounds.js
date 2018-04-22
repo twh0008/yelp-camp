@@ -93,6 +93,22 @@ router.post("/", middleware.isLoggedIn, function(req,res){
        id: req.user._id,
        username: req.user.username
        };
+    if(!image.length) {
+        req.flash("error", "Please enter a link to an image.");
+        return res.redirect('back');
+    }
+    if(!name.length) {
+        req.flash("error", "Please enter a name.");
+        return res.redirect('back');
+    }
+    if(!price.length) {
+        req.flash("error", "Please enter a price.");
+        return res.redirect('back');
+    }
+    if(!description.length) {
+        req.flash("error", "Please enter a description");
+        return res.redirect('back');
+    }
        
     //GOOGLE MAP GEOCODE
        geocoder.geocode(req.body.location, function (err, data) {
@@ -172,14 +188,31 @@ router.put("/:id",middleware.isLoggedIn, middleware.isCampgroundOwner, function(
     req.body.campground.lat = data[0].latitude;
     req.body.campground.lng = data[0].longitude;
     req.body.campground.location = data[0].formattedAddress;
-    
+    if(!req.body.campground.image.length) {
+        req.flash("error", "Please enter a link to an image.");
+        return res.redirect('back');
+    }
+    if(!req.body.campground.name.length) {
+        req.flash("error", "Please enter a name.");
+        return res.redirect('back');
+    }
+    if(!req.body.campground.price.length) {
+        req.flash("error", "Please enter a price.");
+        return res.redirect('back');
+    }
+    if(!req.body.campground.description.length) {
+        req.flash("error", "Please enter a description");
+        return res.redirect('back');
+    }
     
     Campground.findByIdAndUpdate(req.params.id,req.body.campground, function(err, campground) {
-        if (err) {
+        console.log(req.body.campground)
+        if (err || !campground.length) {
             console.log(err);
             req.flash("error", err.message);
-              res.redirect("/campgrounds");
-        } else {
+             res.redirect("/campgrounds");
+        }
+        else {
             req.flash("success", "Successfully Updated!");
             res.redirect("/campgrounds/" + req.params.id);
         }

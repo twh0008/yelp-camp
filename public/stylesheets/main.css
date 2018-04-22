@@ -67,10 +67,18 @@
  animation-delay: 40s;
 }
 
-
+.card {
+ margin-bottom: 10px;
+}
 #campgrounds-row {
  display: flex;
  flex-wrap: wrap;
+}
+#campgrounds-column {
+ margin-bottom: 10px
+}
+#campgrounds-card {
+ margin-bottom: 0px;
 }
 
 

@@ -33,20 +33,20 @@
         
   
             <% campgrounds.forEach(function(campground) { %>
-                <div class="col-md-3 col-sm-6">
-                    <figure class="figure">
-                      <img class="img-thumbnail figure-img" src="<%=campground.image%>">
-                      <figcaption class="figure-caption text-center">
-                          <h5><%=campground.name %></h5>
-                            <p>
-                                
-                                <a href="/campgrounds/<%=campground._id %>" class="btn btn-primary text-center">More Info</a>
-                            </p>
-                      </figcaption>
-                    </figure>
+                <div class="col-md-3 col-sm-6" id="campgrounds-column">
+                    <div class="card h-100" id="campgrounds-card">
+                         <img class="card-img-top" src="<%=campground.image%>" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><%=campground.name %></h5>
+
+                            <a href="/campgrounds/<%=campground._id %>" class="btn btn-primary text-center">More Info</a>
+                        </div>
                 </div>
-                 <% }); %>
-        </div>
+                                </div>
+         <% }); %>
+    </div>
+                 
+
        
     <!--PAGINATION -->
     <div class="row text-center">
